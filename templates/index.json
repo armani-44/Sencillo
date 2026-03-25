@@ -1,13 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
       "settings": {
+        "image": "shopify://shop_images/Summertime-Can-product-shot.png",
         "eyebrow": "Sencillo Tequila",
         "heading": "Bold Taste.\nSimple\nPleasure.",
         "body": "Premium 100% blue agave tequila, perfectly premixed and ready to enjoy. Bold flavour, zero effort — Sencillo.",
         "primary_btn_label": "Shop Now",
-        "secondary_btn_label": "Our Story"
+        "primary_btn_url": "",
+        "secondary_btn_label": "Our Story",
+        "secondary_btn_url": ""
       }
     },
     "marquee": {
@@ -31,17 +43,20 @@
       "settings": {
         "eyebrow": "Our Products",
         "heading": "The Lineup",
-        "products_to_show": 4
+        "collection": "",
+        "products_to_show": 4,
+        "view_all_url": ""
       }
     },
     "split-lifestyle": {
       "type": "split-lifestyle",
       "settings": {
+        "image_position": "center 18%",
         "eyebrow": "The Sencillo Way",
         "heading": "Time To\nSay Hola\nTo Sencillo",
         "body": "Life's too short for complicated cocktails. Grab a can, pour over ice, and taste what premium tequila actually feels like.",
         "btn_label": "Shop The Range",
-        "image_position": "center 18%"
+        "btn_url": ""
       }
     },
     "split-craft": {
@@ -50,7 +65,8 @@
         "eyebrow": "The Craft",
         "heading": "Actively\nAwesome\nAgave",
         "body": "Sourced from the volcanic highlands of Jalisco. Slow-roasted in traditional brick ovens. 100% blue agave — no shortcuts, no compromises, ever.",
-        "btn_label": "Learn More"
+        "btn_label": "Learn More",
+        "btn_url": ""
       }
     },
     "ticker-pink": {
