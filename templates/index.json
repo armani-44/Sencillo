@@ -12,7 +12,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "image": "shopify://shop_images/Summertime-Can-product-shot.png",
+        "image": "shopify://shop_images/summertime-can-1.jpg",
         "eyebrow": "Sencillo Tequila",
         "heading": "Bold Taste.\nSimple\nPleasure.",
         "body": "Premium 100% blue agave tequila, perfectly premixed and ready to enjoy. Bold flavour, zero effort — Sencillo.",
@@ -51,6 +51,7 @@
     "split-lifestyle": {
       "type": "split-lifestyle",
       "settings": {
+        "image": "shopify://shop_images/woman-pool-shot.jpg",
         "image_position": "center 18%",
         "eyebrow": "The Sencillo Way",
         "heading": "Time To\nSay Hola\nTo Sencillo",
@@ -66,7 +67,8 @@
         "heading": "Actively\nAwesome\nAgave",
         "body": "Sourced from the volcanic highlands of Jalisco. Slow-roasted in traditional brick ovens. 100% blue agave — no shortcuts, no compromises, ever.",
         "btn_label": "Learn More",
-        "btn_url": ""
+        "btn_url": "",
+        "image": "shopify://shop_images/friends-product-shot.jpg"
       }
     },
     "ticker-pink": {
