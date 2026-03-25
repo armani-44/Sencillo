@@ -1,0 +1,18 @@
+<section style="overflow:hidden;">
+  {%- if section.settings.image != blank -%}
+    <img src="{{ section.settings.image | image_url: width: 2000 }}"
+      alt="{{ section.settings.image.alt | escape }}"
+      style="width:100%;height:{{ section.settings.height }}px;object-fit:cover;object-position:center;display:block;">
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Banner Image",
+  "settings": [
+    { "type": "image_picker", "id": "image",  "label": "Image" },
+    { "type": "number",       "id": "height", "label": "Height (px)", "default": 500 }
+  ],
+  "presets": [{ "name": "Banner Image" }]
+}
+{% endschema %}

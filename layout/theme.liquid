@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {%- if page_title == shop.name -%}
+      {{ shop.name }} — Bold Taste. Simple Pleasure.
+    {%- else -%}
+      {{ page_title }} — {{ shop.name }}
+    {%- endif -%}
+  </title>
+
+  {{ content_for_head }}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (CDN — swap for PostCSS build in production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Brand styles -->
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+
+  <!-- SVG Grain filter (used by .grainy sections) -->
+  <svg width="0" height="0" style="position:absolute;">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="overlay" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic"/>
+    </filter>
+  </svg>
+</head>
+
+<body>
+
+  {% section 'announcement-bar' %}
+  {% section 'header' %}
+
+  <main id="main-content">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  {{ 'base.js' | asset_url | script_tag }}
+
+</body>
+</html>

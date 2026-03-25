@@ -1,0 +1,29 @@
+<nav style="position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);">
+  <div style="max-width:1280px;margin:0 auto;padding:0.75rem 2rem;display:flex;align-items:baseline;justify-content:center;gap:3rem;" class="nav-links">
+    <a href="{{ routes.root_url }}collections/all" class="nav-link">Shop</a>
+    <a href="{{ pages['our-story'].url }}" class="nav-link">Our Story</a>
+    <a href="{{ routes.root_url }}" style="flex-shrink:0;display:inline-block;vertical-align:baseline;">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}"
+          style="height:72px;width:auto;display:block;">
+      {%- else -%}
+        <span style="font-weight:900;font-size:1.5rem;letter-spacing:-0.03em;color:var(--pink);">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+    <a href="#craft" class="nav-link">The Craft</a>
+    <a href="#newsletter" class="nav-link">Join</a>
+  </div>
+</nav>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ]
+}
+{% endschema %}

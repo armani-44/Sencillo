@@ -1,0 +1,39 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Sencillo",
+    "theme_version": "1.0.0",
+    "theme_author": "Sencillo Drinks Ltd",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social Links"
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "url",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "url",
+        "id": "social_snapchat",
+        "label": "Snapchat URL"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook",
+        "label": "Facebook URL"
+      }
+    ]
+  }
+]

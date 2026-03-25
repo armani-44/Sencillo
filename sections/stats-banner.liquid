@@ -1,0 +1,43 @@
+<section style="position:relative;background:var(--yellow);padding:3.5rem 2rem;overflow:hidden;" class="grainy">
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden;">
+    <p style="font-weight:900;font-size:clamp(8rem,18vw,16rem);color:rgba(0,0,0,0.04);letter-spacing:-0.04em;text-transform:uppercase;white-space:nowrap;user-select:none;">SENCILLO</p>
+  </div>
+  <div style="position:relative;z-index:1;max-width:980px;margin:0 auto;">
+    <h2 class="display reveal" style="font-size:clamp(1.5rem,2.8vw,2.2rem);color:var(--dark);text-align:center;margin-bottom:3rem;">
+      {{ section.settings.heading }}
+    </h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:600px;margin:0 auto;" class="stats-grid">
+
+      {%- for i in (1..3) -%}
+        {%- assign num_key   = 'stat_' | append: i | append: '_number' -%}
+        {%- assign label_key = 'stat_' | append: i | append: '_label' -%}
+        <div class="reveal" style="text-align:center;transition-delay:{{ forloop.index0 | times: 0.08 | append: 's' }}">
+          <p class="stat-num" style="font-size:clamp(2.8rem,5.5vw,4.2rem);color:var(--dark);"
+            data-target="{{ section.settings[num_key] }}">
+            0<span style="color:var(--pink);">+</span>
+          </p>
+          <p style="font-weight:600;font-size:0.75rem;color:rgba(0,0,0,0.55);margin-top:0.45rem;letter-spacing:0.06em;text-transform:uppercase;">
+            {{ section.settings[label_key] }}
+          </p>
+        </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stats Banner",
+  "settings": [
+    { "type": "text",   "id": "heading",      "label": "Heading",         "default": "A Can For Every Occasion!" },
+    { "type": "number", "id": "stat_1_number","label": "Stat 1 number",   "default": 2500 },
+    { "type": "text",   "id": "stat_1_label", "label": "Stat 1 label",    "default": "Happy Customers" },
+    { "type": "number", "id": "stat_2_number","label": "Stat 2 number",   "default": 15 },
+    { "type": "text",   "id": "stat_2_label", "label": "Stat 2 label",    "default": "Awards Won" },
+    { "type": "number", "id": "stat_3_number","label": "Stat 3 number",   "default": 25 },
+    { "type": "text",   "id": "stat_3_label", "label": "Stat 3 label",    "default": "5-Star Reviews" }
+  ],
+  "presets": [{ "name": "Stats Banner" }]
+}
+{% endschema %}

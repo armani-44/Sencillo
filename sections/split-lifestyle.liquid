@@ -1,0 +1,50 @@
+<section style="display:grid;grid-template-columns:1fr 1fr;" class="split-grid">
+
+  <!-- Left: image -->
+  <div class="split-panel" style="position:relative;overflow:hidden;min-height:560px;">
+    {%- if section.settings.image != blank -%}
+      <img src="{{ section.settings.image | image_url: width: 900 }}"
+        alt="{{ section.settings.image.alt | escape }}" class="split-img"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ section.settings.image_position }};display:block;">
+    {%- endif -%}
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(225,0,114,0.06) 0%,transparent 60%);pointer-events:none;"></div>
+  </div>
+
+  <!-- Right: copy on pink -->
+  <div style="position:relative;background:var(--pink);display:flex;align-items:center;justify-content:center;padding:5.5rem 4.5rem;overflow:hidden;" class="grainy">
+    <div style="position:absolute;right:-8%;bottom:-5%;width:70%;opacity:0.06;filter:brightness(0) invert(1);pointer-events:none;transform:rotate(-10deg);">
+      {%- if section.settings.watermark != blank -%}
+        <img src="{{ section.settings.watermark | image_url: width: 600 }}" alt="" style="width:100%;height:auto;">
+      {%- endif -%}
+    </div>
+    <div class="reveal" style="position:relative;z-index:1;">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.6);margin-bottom:1.3rem;">{{ section.settings.eyebrow }}</p>
+      <h2 class="display" style="font-size:clamp(3rem,5.5vw,4.6rem);color:#fff;margin-bottom:1.75rem;text-shadow:0 4px 24px rgba(0,0,0,0.12);">
+        {{ section.settings.heading }}
+      </h2>
+      <div style="width:44px;height:3px;background:rgba(255,255,255,0.4);margin-bottom:1.75rem;border-radius:2px;"></div>
+      <p style="font-weight:400;font-size:0.95rem;line-height:1.75;color:rgba(255,255,255,0.8);max-width:320px;margin-bottom:2.25rem;">
+        {{ section.settings.body }}
+      </p>
+      <a href="{{ section.settings.btn_url }}" class="btn-outline-white">{{ section.settings.btn_label }}</a>
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Lifestyle Split",
+  "settings": [
+    { "type": "image_picker", "id": "image",          "label": "Left image" },
+    { "type": "text",         "id": "image_position", "label": "Image focus position", "default": "center 18%" },
+    { "type": "image_picker", "id": "watermark",      "label": "Watermark image (logo)" },
+    { "type": "text",         "id": "eyebrow",        "label": "Eyebrow",   "default": "The Sencillo Way" },
+    { "type": "textarea",     "id": "heading",        "label": "Heading",   "default": "Time To\nSay Hola\nTo Sencillo" },
+    { "type": "textarea",     "id": "body",           "label": "Body copy", "default": "Life's too short for complicated cocktails. Grab a can, pour over ice, and taste what premium tequila actually feels like." },
+    { "type": "text",         "id": "btn_label",      "label": "Button label", "default": "Shop The Range" },
+    { "type": "url",          "id": "btn_url",        "label": "Button URL" }
+  ],
+  "presets": [{ "name": "Lifestyle Split" }]
+}
+{% endschema %}

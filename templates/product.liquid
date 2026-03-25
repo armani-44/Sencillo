@@ -1,0 +1,143 @@
+{% comment %} Single product page {% endcomment %}
+
+<!-- Breadcrumb -->
+<div style="max-width:1280px;margin:0 auto;padding:1.25rem 2rem;">
+  <p style="font-size:0.75rem;color:#aaa;">
+    <a href="{{ routes.root_url }}" style="color:#aaa;text-decoration:none;transition:color 0.2s;"
+      onmouseover="this.style.color='#E10072'" onmouseout="this.style.color='#aaa'">Home</a>
+    &nbsp;/&nbsp;
+    <a href="{{ routes.root_url }}collections/all" style="color:#aaa;text-decoration:none;transition:color 0.2s;"
+      onmouseover="this.style.color='#E10072'" onmouseout="this.style.color='#aaa'">Shop</a>
+    &nbsp;/&nbsp;
+    <span style="color:var(--dark);font-weight:600;">{{ product.title }}</span>
+  </p>
+</div>
+
+<!-- Product layout -->
+<section style="max-width:1280px;margin:0 auto;padding:0 2rem 5rem;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;" class="product-layout reveal">
+
+    <!-- Left: imagery -->
+    <div>
+      <div style="border-radius:20px;overflow:hidden;background:{{ product.metafields.custom.card_bg_gradient | default: 'linear-gradient(148deg,#FFEDF6,#FFD4EE)' }};position:relative;aspect-ratio:3/4;">
+        {%- if product.featured_image != blank -%}
+          <img src="{{ product.featured_image | image_url: width: 900 }}"
+            alt="{{ product.featured_image.alt | escape }}"
+            style="width:100%;height:100%;object-fit:cover;object-position:{{ product.metafields.custom.image_position | default: 'center' }};">
+        {%- endif -%}
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(147,4,78,0.55) 0%,rgba(147,4,78,0.12) 40%,transparent 65%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:2rem;left:2rem;right:2rem;">
+          <p style="font-weight:900;font-size:2.2rem;letter-spacing:-0.025em;color:#fff;text-transform:uppercase;text-shadow:0 3px 20px rgba(0,0,0,0.4);line-height:1.05;">{{ product.title }}</p>
+          {%- if product.metafields.custom.subtitle != blank -%}
+            <p style="font-weight:300;font-size:1rem;color:rgba(255,255,255,0.88);font-style:italic;margin-top:4px;letter-spacing:0.02em;">{{ product.metafields.custom.subtitle }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: details -->
+    <div>
+      <!-- Rating -->
+      {%- if product.metafields.reviews.rating != blank -%}
+        <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem;">
+          <span class="stars">★★★★★</span>
+          <span style="font-weight:600;font-size:0.78rem;color:#aaa;">{{ product.metafields.reviews.rating }} · {{ product.metafields.reviews.rating_count }} reviews</span>
+        </div>
+      {%- endif -%}
+
+      <p class="eyebrow" style="color:var(--pink);margin-bottom:0.75rem;">{{ product.type }}</p>
+      <h1 class="display" style="font-size:clamp(2.5rem,4.5vw,3.6rem);color:var(--dark);margin-bottom:0.5rem;">{{ product.title }}</h1>
+      {%- if product.metafields.custom.subtitle != blank -%}
+        <p style="font-weight:300;font-size:1.05rem;font-style:italic;color:#888;margin-bottom:1.5rem;">{{ product.metafields.custom.subtitle }}</p>
+      {%- endif -%}
+
+      <!-- Ingredients pills -->
+      {%- if product.metafields.custom.ingredients != blank -%}
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.75rem;">
+          {%- assign ingredients = product.metafields.custom.ingredients | split: ',' -%}
+          {%- for ingredient in ingredients -%}
+            <span class="ingredient-pill">{{ ingredient | strip }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      <!-- Price -->
+      <div style="display:flex;align-items:baseline;gap:0.75rem;margin-bottom:2rem;">
+        <span style="font-weight:900;font-size:2.4rem;color:var(--dark);letter-spacing:-0.03em;">{{ product.price | money }}</span>
+        {%- if product.compare_at_price > product.price -%}
+          <span style="font-size:1.1rem;color:#bbb;text-decoration:line-through;">{{ product.compare_at_price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      <!-- Add to cart -->
+      {% form 'product', product, class: 'js-add-to-cart' %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        <!-- Quantity -->
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <button type="button" id="qty-minus" class="qty-btn">−</button>
+          <input id="qty-input" type="number" name="quantity" value="1" min="1"
+            style="width:52px;text-align:center;border:1px solid rgba(0,0,0,0.12);border-radius:9999px;padding:0.55rem 0;font-weight:700;font-size:1rem;background:#fff;font-family:inherit;">
+          <button type="button" id="qty-plus" class="qty-btn">+</button>
+        </div>
+
+        <div style="display:flex;gap:0.75rem;margin-bottom:1.5rem;">
+          <button type="submit" class="add-to-bag-lg">Add to Bag</button>
+        </div>
+      {% endform %}
+
+      <!-- Product details -->
+      <div style="border-top:1px solid rgba(0,0,0,0.06);padding-top:1.5rem;margin-bottom:2rem;">
+        {%- if product.metafields.custom.abv != blank -%}
+          <div class="detail-row">
+            <span class="detail-label">ABV</span>
+            <span class="detail-value">{{ product.metafields.custom.abv }}</span>
+          </div>
+        {%- endif -%}
+        {%- if product.metafields.custom.volume != blank -%}
+          <div class="detail-row">
+            <span class="detail-label">Volume</span>
+            <span class="detail-value">{{ product.metafields.custom.volume }}</span>
+          </div>
+        {%- endif -%}
+        {%- if product.metafields.custom.origin != blank -%}
+          <div class="detail-row">
+            <span class="detail-label">Origin</span>
+            <span class="detail-value">{{ product.metafields.custom.origin }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Tabs: Description / Delivery -->
+      <div style="display:flex;gap:2rem;border-bottom:1px solid rgba(0,0,0,0.08);margin-bottom:1.5rem;">
+        <button class="tab-btn active" data-tab="description">Description</button>
+        <button class="tab-btn" data-tab="delivery">Delivery</button>
+      </div>
+      <div id="tab-description" class="tab-panel" style="font-size:0.92rem;line-height:1.75;color:#555;">
+        {{ product.description }}
+      </div>
+      <div id="tab-delivery" class="tab-panel" style="display:none;font-size:0.92rem;line-height:1.75;color:#555;">
+        <p>Free standard delivery on all orders over £30. Orders typically dispatched within 1–2 business days.</p>
+        <p style="margin-top:0.75rem;">Express delivery available at checkout. See our <a href="/pages/delivery" style="color:var(--pink);">delivery page</a> for full details.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- You may also like -->
+{%- assign related = collections.all.products | where: 'id', '!=', product.id -%}
+{%- if collections.all.products.size > 1 -%}
+<section style="padding:4rem 2rem 6rem;background:var(--cream);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h2 class="display reveal" style="font-size:clamp(2rem,4vw,3rem);color:var(--dark);margin-bottom:2.5rem;text-align:center;">You May Also Like</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,420px));gap:2rem;justify-content:center;" class="products-grid">
+      {%- for p in collections.all.products limit: 3 -%}
+        {%- unless p.id == product.id -%}
+          {% render 'product-card', product: p %}
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}

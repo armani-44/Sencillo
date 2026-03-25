@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Sencillo Tequila",
+        "heading": "Bold Taste.\nSimple\nPleasure.",
+        "body": "Premium 100% blue agave tequila, perfectly premixed and ready to enjoy. Bold flavour, zero effort — Sencillo.",
+        "primary_btn_label": "Shop Now",
+        "secondary_btn_label": "Our Story"
+      }
+    },
+    "marquee": {
+      "type": "marquee-ticker",
+      "settings": {}
+    },
+    "stats": {
+      "type": "stats-banner",
+      "settings": {
+        "heading": "A Can For Every Occasion!",
+        "stat_1_number": 2500,
+        "stat_1_label": "Happy Customers",
+        "stat_2_number": 15,
+        "stat_2_label": "Awards Won",
+        "stat_3_number": 25,
+        "stat_3_label": "5-Star Reviews"
+      }
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "eyebrow": "Our Products",
+        "heading": "The Lineup",
+        "products_to_show": 4
+      }
+    },
+    "split-lifestyle": {
+      "type": "split-lifestyle",
+      "settings": {
+        "eyebrow": "The Sencillo Way",
+        "heading": "Time To\nSay Hola\nTo Sencillo",
+        "body": "Life's too short for complicated cocktails. Grab a can, pour over ice, and taste what premium tequila actually feels like.",
+        "btn_label": "Shop The Range",
+        "image_position": "center 18%"
+      }
+    },
+    "split-craft": {
+      "type": "split-craft",
+      "settings": {
+        "eyebrow": "The Craft",
+        "heading": "Actively\nAwesome\nAgave",
+        "body": "Sourced from the volcanic highlands of Jalisco. Slow-roasted in traditional brick ovens. 100% blue agave — no shortcuts, no compromises, ever.",
+        "btn_label": "Learn More"
+      }
+    },
+    "ticker-pink": {
+      "type": "ticker-pink",
+      "settings": {}
+    },
+    "banner-image": {
+      "type": "banner-image",
+      "settings": {
+        "height": 500
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Join La Familia!",
+        "body": "Sign up to our newsletter and be the first to know about new flavors, exclusive drops, and events near you.",
+        "placeholder": "Enter your email address",
+        "btn_label": "Subscribe",
+        "disclaimer": "No spam, ever. Unsubscribe anytime."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "marquee",
+    "stats",
+    "featured-products",
+    "split-lifestyle",
+    "split-craft",
+    "ticker-pink",
+    "banner-image",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,47 @@
+<section style="position:relative;overflow:hidden;min-height:85vh;display:flex;align-items:center;">
+  {%- if section.settings.image != blank -%}
+    <img src="{{ section.settings.image | image_url: width: 1800 }}"
+      alt="{{ section.settings.image.alt | escape }}"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;">
+  {%- endif -%}
+
+  <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.05) 100%);"></div>
+
+  <div style="position:relative;z-index:2;max-width:1280px;width:100%;margin:0 auto;padding:6rem 3.5rem;">
+    <p class="eyebrow hero-eyebrow" style="color:var(--yellow);margin-bottom:1.4rem;">{{ section.settings.eyebrow }}</p>
+    {%- assign heading_lines = section.settings.heading | newline_to_br | split: '<br />' -%}
+    {%- for line in heading_lines -%}
+      <h1 class="display hero-h1" style="font-size:clamp(3.8rem,7vw,7rem);color:#fff;margin-bottom:0;line-height:1;text-shadow:0 4px 32px rgba(0,0,0,0.3);{% if forloop.last %}margin-bottom:2rem;{% endif %}animation-delay:{{ forloop.index0 | times: 0.15 }}s;">
+        {{ line }}
+      </h1>
+    {%- endfor -%}
+    <p class="hero-body" style="font-weight:400;font-size:1.1rem;line-height:1.75;color:rgba(255,255,255,0.85);max-width:420px;margin-bottom:2.5rem;">
+      {{ section.settings.body }}
+    </p>
+    <div class="hero-ctas" style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="{{ section.settings.primary_btn_url }}" class="btn-dark" style="background:var(--pink);color:#fff;border-color:var(--pink);"
+        onmouseover="this.style.background='#c80068';this.style.borderColor='#c80068'"
+        onmouseout="this.style.background='var(--pink)';this.style.borderColor='var(--pink)'">
+        {{ section.settings.primary_btn_label }}
+      </a>
+      <a href="{{ section.settings.secondary_btn_url }}" class="btn-outline-white">{{ section.settings.secondary_btn_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "image_picker", "id": "image",              "label": "Background image" },
+    { "type": "text",         "id": "eyebrow",            "label": "Eyebrow text",          "default": "Sencillo Tequila" },
+    { "type": "textarea",     "id": "heading",            "label": "Heading (one line per line)", "default": "Bold Taste.\nSimple\nPleasure." },
+    { "type": "textarea",     "id": "body",               "label": "Body copy",             "default": "Premium 100% blue agave tequila, perfectly premixed and ready to enjoy. Bold flavour, zero effort — Sencillo." },
+    { "type": "text",         "id": "primary_btn_label",  "label": "Primary button label",  "default": "Shop Now" },
+    { "type": "url",          "id": "primary_btn_url",    "label": "Primary button URL" },
+    { "type": "text",         "id": "secondary_btn_label","label": "Secondary button label", "default": "Our Story" },
+    { "type": "url",          "id": "secondary_btn_url",  "label": "Secondary button URL" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}
