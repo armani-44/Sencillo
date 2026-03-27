@@ -12,7 +12,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body { font-family: 'Jost', sans-serif; background: #fff; color: var(--dark); overflow-x: hidden; }
 
 /* ─── Grain overlay ─── */
@@ -223,4 +223,13 @@ body { font-family: 'Jost', sans-serif; background: #fff; color: var(--dark); ov
 @media (max-width: 540px) {
   .stats-grid { grid-template-columns: repeat(3,1fr) !important; }
   .products-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 640px) {
+  .announce-socials { display: none !important; }
+  .promo-center { position: static !important; transform: none !important; flex: 1 !important; }
+  .promo-inner { min-width: 0 !important; width: 100% !important; }
+  .footer-top { grid-template-columns: 1fr !important; }
+  .footer-signup-form { flex-direction: column !important; }
+  .footer-signup-form input { border-right: 2px solid #fff !important; border-bottom: none !important; border-radius: 4px 4px 0 0 !important; }
+  .footer-signup-form button { width: 100% !important; border-radius: 0 0 4px 4px !important; }
 }

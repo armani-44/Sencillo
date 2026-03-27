@@ -1,7 +1,7 @@
 <div style="background:var(--pink);padding:0 1.5rem;height:40px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:201;">
 
   <!-- Left: social icons -->
-  <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+  <div class="announce-socials" style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
     <a href="{{ section.settings.tiktok_url }}" aria-label="TikTok" style="color:#fff;opacity:0.9;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
       <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.24 8.24 0 004.83 1.55V6.79a4.85 4.85 0 01-1.06-.1z"/></svg>
     </a>
@@ -17,9 +17,9 @@
   </div>
 
   <!-- Centre: promo carousel -->
-  <div style="position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1rem;">
+  <div class="promo-center" style="position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:1rem;">
     <button id="promoPrev" aria-label="Previous" style="background:none;border:none;cursor:pointer;color:var(--yellow);font-size:1rem;line-height:1;padding:0;opacity:0.85;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">←</button>
-    <div style="overflow:hidden;height:40px;display:flex;align-items:center;min-width:380px;justify-content:center;">
+    <div class="promo-inner" style="overflow:hidden;height:40px;display:flex;align-items:center;min-width:380px;justify-content:center;">
       <div id="promoTrack" style="display:flex;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);width:100%;">
         <span class="promo-msg" style="min-width:100%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.67rem;letter-spacing:0.15em;text-transform:uppercase;color:#fff;white-space:nowrap;">{{ section.settings.promo_1 }}</span>
         <span class="promo-msg" style="min-width:100%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:0.67rem;letter-spacing:0.15em;text-transform:uppercase;color:#fff;white-space:nowrap;">{{ section.settings.promo_2 }}</span>
