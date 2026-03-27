@@ -1,5 +1,7 @@
 <nav style="position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);">
-  <div style="max-width:1280px;margin:0 auto;padding:0.75rem 2rem;display:flex;align-items:baseline;justify-content:center;gap:3rem;" class="nav-links">
+
+  <!-- Desktop nav -->
+  <div class="nav-desktop" style="max-width:1280px;margin:0 auto;padding:0.75rem 2rem;display:flex;align-items:baseline;justify-content:center;gap:3rem;">
     <a href="{{ routes.root_url }}collections/all" class="nav-link">Shop</a>
     <a href="{{ pages['our-story'].url }}" class="nav-link">Our Story</a>
     <a href="{{ routes.root_url }}" style="flex-shrink:0;display:inline-block;vertical-align:baseline;">
@@ -13,7 +15,49 @@
     <a href="#craft" class="nav-link">The Craft</a>
     <a href="#newsletter" class="nav-link">Join</a>
   </div>
+
+  <!-- Mobile nav bar -->
+  <div class="nav-mobile" style="display:none;padding:0.6rem 1.25rem;align-items:center;justify-content:space-between;">
+    <a href="{{ routes.root_url }}" style="display:inline-block;flex-shrink:0;">
+      {%- if section.settings.logo != blank -%}
+        <img src="{{ section.settings.logo | image_url: width: 160 }}" alt="{{ shop.name }}"
+          style="height:52px;width:auto;display:block;">
+      {%- else -%}
+        <span style="font-weight:900;font-size:1.25rem;letter-spacing:-0.03em;color:var(--pink);">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false"
+      style="background:none;border:none;cursor:pointer;padding:6px;color:var(--dark);display:flex;align-items:center;justify-content:center;">
+      <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" style="display:none;flex-direction:column;border-top:1px solid rgba(0,0,0,0.07);padding:0.5rem 0 1rem;">
+    <a href="{{ routes.root_url }}collections/all" class="nav-drawer-link">Shop</a>
+    <a href="{{ pages['our-story'].url }}" class="nav-drawer-link">Our Story</a>
+    <a href="#craft" class="nav-drawer-link">The Craft</a>
+    <a href="#newsletter" class="nav-drawer-link">Join La Familia</a>
+  </div>
+
 </nav>
+
+<script>
+  (function() {
+    var btn = document.querySelector('.nav-hamburger');
+    var drawer = document.querySelector('.nav-drawer');
+    var iconMenu = btn.querySelector('.icon-menu');
+    var iconClose = btn.querySelector('.icon-close');
+    btn.addEventListener('click', function() {
+      var open = drawer.style.display === 'flex';
+      drawer.style.display = open ? 'none' : 'flex';
+      iconMenu.style.display = open ? 'block' : 'none';
+      iconClose.style.display = open ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  })();
+</script>
 
 {% schema %}
 {
