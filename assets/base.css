@@ -212,6 +212,17 @@ body { font-family: 'Jost', sans-serif; background: #fff; color: var(--dark); ov
 .tab-btn.active { color: var(--dark); border-bottom-color: var(--pink); }
 .tab-btn:hover { color: var(--dark); }
 
+/* ─── Full-screen search ─── */
+.search-pill {
+  display: inline-block; color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.14); border-radius: 9999px;
+  padding: 0.4rem 1rem; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.search-pill:hover { color: #fff; border-color: var(--pink); background: rgba(225,0,114,0.1); }
+.search-result-row:hover { background: rgba(255,255,255,0.04); border-radius: 10px; }
+
 /* ─── Responsive ─── */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr !important; }

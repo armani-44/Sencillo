@@ -1,0 +1,178 @@
+<!-- ─── New Visitor Email Capture Popup ─── -->
+<div id="email-popup" role="dialog" aria-modal="true" aria-labelledby="popup-heading"
+  style="display:none;position:fixed;inset:0;z-index:600;background:rgba(0,0,0,0.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:1rem;opacity:0;transition:opacity 0.4s ease;">
+
+  <div style="background:#fff;border-radius:24px;overflow:hidden;max-width:520px;width:100%;position:relative;box-shadow:0 40px 80px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.04);transform:scale(0.94) translateY(12px);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);" id="popup-card">
+
+    <!-- Close button -->
+    <button id="popup-close" aria-label="Close"
+      style="position:absolute;top:1rem;right:1rem;z-index:2;background:rgba(255,255,255,0.2);border:none;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:background 0.2s;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+
+    <!-- Top brand panel -->
+    <div class="grainy" style="position:relative;background:linear-gradient(140deg, var(--deep) 0%, var(--pink) 60%, var(--coral) 100%);padding:3rem 2.5rem 2.5rem;text-align:center;overflow:hidden;">
+      <!-- Decorative circles -->
+      <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;"></div>
+      <div style="position:absolute;bottom:-60px;left:-30px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04);pointer-events:none;"></div>
+
+      <p class="eyebrow" style="color:rgba(255,255,255,0.6);margin-bottom:1.25rem;position:relative;">Welcome to Sencillo</p>
+      <h2 id="popup-heading" style="font-weight:900;font-size:clamp(2.2rem,6vw,3rem);color:#fff;letter-spacing:-0.03em;text-transform:uppercase;line-height:0.88;margin-bottom:1rem;position:relative;">
+        10% Off<br>Your First<br>Order
+      </h2>
+      <p style="color:rgba(255,255,255,0.72);font-size:0.88rem;line-height:1.6;position:relative;max-width:280px;margin:0 auto;">
+        Join La Familia for exclusive drops, cocktail inspo, and a welcome discount.
+      </p>
+    </div>
+
+    <!-- Bottom form panel -->
+    <div style="padding:2rem 2.5rem 2.5rem;">
+
+      <!-- Default state: form -->
+      <div id="popup-form-wrap">
+        <form id="popup-form" novalidate style="display:flex;flex-direction:column;gap:0.75rem;">
+          <input type="email" id="popup-email" name="email" required
+            placeholder="Your email address"
+            aria-label="Email address"
+            style="width:100%;border:2px solid rgba(0,0,0,0.1);border-radius:9999px;padding:0.9rem 1.5rem;font-size:0.9rem;font-family:'Jost',sans-serif;outline:none;transition:border-color 0.2s;color:var(--dark);">
+          <button type="submit"
+            style="width:100%;background:var(--dark);color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;padding:1rem 1.5rem;border-radius:9999px;border:2px solid var(--dark);cursor:pointer;transition:background 0.2s,color 0.2s,transform 0.22s cubic-bezier(0.34,1.56,0.64,1);">
+            Claim My 10% Off
+          </button>
+        </form>
+        <p style="text-align:center;margin-top:1rem;font-size:0.73rem;color:#bbb;line-height:1.5;">
+          No spam, ever. Unsubscribe anytime. &nbsp;
+          <button id="popup-skip" style="background:none;border:none;color:#bbb;text-decoration:underline;cursor:pointer;font-size:0.73rem;font-family:'Jost',sans-serif;padding:0;">No thanks</button>
+        </p>
+      </div>
+
+      <!-- Success state: code reveal -->
+      <div id="popup-success" style="display:none;text-align:center;padding:0.5rem 0;">
+        <div style="width:52px;height:52px;background:rgba(225,0,114,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--pink)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-weight:900;font-size:1.25rem;letter-spacing:-0.02em;color:var(--dark);margin-bottom:0.5rem;">You're in La Familia!</h3>
+        <p style="font-size:0.85rem;color:#777;margin-bottom:1.25rem;">Your discount code is ready. Use it at checkout:</p>
+        <div style="background:#f5f5f3;border-radius:12px;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;">
+          <span id="popup-code" style="font-weight:900;font-size:1.1rem;letter-spacing:0.12em;color:var(--pink);">FAMILIA10</span>
+          <button id="copy-code" style="background:none;border:1px solid rgba(0,0,0,0.12);border-radius:9999px;padding:0.35rem 0.9rem;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;color:var(--dark);transition:background 0.2s;">Copy</button>
+        </div>
+        <a href="{{ routes.root_url }}collections/all"
+          style="display:block;background:var(--pink);color:#fff;font-family:'Jost',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;padding:1rem 1.5rem;border-radius:9999px;text-decoration:none;transition:background 0.2s;">
+          Shop Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'sencillo_popup_dismissed';
+  var popup   = document.getElementById('email-popup');
+  var card    = document.getElementById('popup-card');
+  var form    = document.getElementById('popup-form');
+  var skip    = document.getElementById('popup-skip');
+  var closeB  = document.getElementById('popup-close');
+  var formWrap = document.getElementById('popup-form-wrap');
+  var success = document.getElementById('popup-success');
+  var emailIn = document.getElementById('popup-email');
+  var copyBtn = document.getElementById('copy-code');
+
+  /* Show after 4s if not already dismissed */
+  if (!sessionStorage.getItem(STORAGE_KEY) && !localStorage.getItem(STORAGE_KEY)) {
+    setTimeout(open, 4000);
+  }
+
+  function open() {
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function() {
+      popup.style.opacity = '1';
+      card.style.transform = 'scale(1) translateY(0)';
+    });
+  }
+
+  function dismiss() {
+    popup.style.opacity = '0';
+    card.style.transform = 'scale(0.96) translateY(8px)';
+    document.body.style.overflow = '';
+    sessionStorage.setItem(STORAGE_KEY, '1');
+    setTimeout(function() { popup.style.display = 'none'; }, 400);
+  }
+
+  closeB.addEventListener('click', dismiss);
+  skip.addEventListener('click', function() {
+    localStorage.setItem(STORAGE_KEY, '1'); /* "no thanks" = don't show again across sessions */
+    dismiss();
+  });
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) dismiss();
+  });
+
+  /* Input focus ring */
+  emailIn.addEventListener('focus', function() { emailIn.style.borderColor = 'var(--pink)'; });
+  emailIn.addEventListener('blur',  function() { emailIn.style.borderColor = 'rgba(0,0,0,0.1)'; });
+
+  /* Form submit */
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!emailIn.validity.valid) {
+      emailIn.style.borderColor = 'var(--coral)';
+      emailIn.focus();
+      return;
+    }
+    /* In production: POST to Klaviyo/Mailchimp/Shopify customer API here */
+    localStorage.setItem(STORAGE_KEY, '1');
+    formWrap.style.display = 'none';
+    success.style.display = 'block';
+  });
+
+  /* Copy code */
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      var code = document.getElementById('popup-code').textContent;
+      navigator.clipboard.writeText(code).then(function() {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function() { copyBtn.textContent = 'Copy'; }, 2000);
+      });
+    });
+  }
+
+  /* Submit button hover states */
+  var submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.addEventListener('mouseenter', function() {
+    submitBtn.style.background = 'transparent';
+    submitBtn.style.color = 'var(--dark)';
+  });
+  submitBtn.addEventListener('mouseleave', function() {
+    submitBtn.style.background = 'var(--dark)';
+    submitBtn.style.color = '#fff';
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Email Popup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Discount code to reveal",
+      "default": "FAMILIA10"
+    },
+    {
+      "type": "range",
+      "id": "delay_seconds",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "unit": "s",
+      "label": "Delay before showing",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}
