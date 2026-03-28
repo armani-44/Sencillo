@@ -51,6 +51,7 @@
         "type": "about",
         "settings": {
           "hero_image": "shopify://shop_images/summertime-can-1_efd20ad4-fcd3-4f25-8b45-3c070457ab1e.jpg",
+          "origin_image": "shopify://shop_images/friends-product-shot.jpg",
           "hero_eyebrow": "Our Story",
           "hero_heading": "Simple By\nDesign.",
           "hero_body": "Sencillo was born from a simple idea: the best cocktail you ever tasted shouldn't require a bartender, a shaker, or a ten-step recipe. Just great ingredients and great moments.",
