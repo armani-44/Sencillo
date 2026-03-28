@@ -141,3 +141,44 @@
   </div>
 </section>
 {%- endif -%}
+
+<script>
+(function() {
+  /* ── Product page qty buttons ── */
+  var minus = document.getElementById('qty-minus');
+  var plus  = document.getElementById('qty-plus');
+  var input = document.getElementById('qty-input');
+  if (minus && plus && input) {
+    minus.addEventListener('click', function() {
+      var v = parseInt(input.value, 10) || 1;
+      if (v > 1) input.value = v - 1;
+    });
+    plus.addEventListener('click', function() {
+      input.value = (parseInt(input.value, 10) || 1) + 1;
+    });
+  }
+
+  /* ── Tab switching ── */
+  var tabBtns   = document.querySelectorAll('.tab-btn');
+  var tabPanels = document.querySelectorAll('.tab-panel');
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tabBtns.forEach(function(b)   { b.classList.remove('active'); });
+      tabPanels.forEach(function(p) { p.style.display = 'none'; });
+      btn.classList.add('active');
+      var panel = document.getElementById('tab-' + btn.dataset.tab);
+      if (panel) panel.style.display = 'block';
+    });
+  });
+
+  /* ── Scroll reveal ── */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in'); });
+  }
+})();
+</script>

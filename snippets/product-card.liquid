@@ -3,6 +3,23 @@
   Usage: {% render 'product-card', product: product %}
 {% endcomment %}
 
+{% unless cardQtyScriptLoaded %}
+  {% assign cardQtyScriptLoaded = true %}
+  <script>
+  if (!window._cardQtyReady) {
+    window._cardQtyReady = true;
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.card-qty-dec, .card-qty-inc');
+      if (!btn) return;
+      var input = btn.closest('form').querySelector('.card-qty-input');
+      if (!input) return;
+      var v = parseInt(input.value, 10) || 1;
+      input.value = btn.classList.contains('card-qty-inc') ? v + 1 : Math.max(1, v - 1);
+    });
+  }
+  </script>
+{% endunless %}
+
 {%- liquid
   assign card_class = 'product-card'
   assign hover_class = product.handle
@@ -63,16 +80,28 @@
       {{ product.metafields.custom.volume | default: '150ml' }} &nbsp;·&nbsp; {{ product.metafields.custom.abv | default: '15% ABV' }}
     </p>
 
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.85rem;">
       <span style="font-weight:900;font-size:1.6rem;color:var(--dark);letter-spacing:-0.02em;">
         {{ product.price | money }}
       </span>
-      {% form 'product', product, class: 'js-add-to-cart' %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-        <button type="submit" class="add-to-bag" style="width:auto;padding:0.8rem 1.6rem;">
+    </div>
+    {% form 'product', product, class: 'js-add-to-cart' %}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <div style="display:flex;align-items:center;gap:0.6rem;">
+        <!-- Qty control -->
+        <div style="display:flex;align-items:center;border:1px solid rgba(0,0,0,0.12);border-radius:9999px;flex-shrink:0;">
+          <button type="button" class="card-qty-dec"
+            style="width:32px;height:32px;background:none;border:none;cursor:pointer;font-size:1.1rem;font-weight:700;color:var(--dark);display:flex;align-items:center;justify-content:center;line-height:1;">−</button>
+          <input type="number" name="quantity" value="1" min="1" class="card-qty-input"
+            style="width:34px;height:32px;border:none;border-left:1px solid rgba(0,0,0,0.08);border-right:1px solid rgba(0,0,0,0.08);text-align:center;font-family:'Jost',sans-serif;font-weight:700;font-size:0.85rem;color:var(--dark);outline:none;-moz-appearance:textfield;background:#fff;">
+          <button type="button" class="card-qty-inc"
+            style="width:32px;height:32px;background:none;border:none;cursor:pointer;font-size:1.1rem;font-weight:700;color:var(--dark);display:flex;align-items:center;justify-content:center;line-height:1;">+</button>
+        </div>
+        <!-- Add to bag -->
+        <button type="submit" class="add-to-bag" style="flex:1;padding:0.8rem 1rem;">
           Add to Bag
         </button>
-      {% endform %}
-    </div>
+      </div>
+    {% endform %}
   </div>
 </div>

@@ -212,6 +212,11 @@ body { font-family: 'Jost', sans-serif; background: #fff; color: var(--dark); ov
 .tab-btn.active { color: var(--dark); border-bottom-color: var(--pink); }
 .tab-btn:hover { color: var(--dark); }
 
+/* ─── Hide number input spinners ─── */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type=number] { -moz-appearance: textfield; }
+
 /* ─── Full-screen search ─── */
 .search-pill {
   display: inline-block; color: rgba(255,255,255,0.55);
