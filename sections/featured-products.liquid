@@ -1,5 +1,10 @@
 {%- assign featured_collection = collections[section.settings.collection] -%}
 
+<style>
+  .view-all-align { text-align: right; }
+  @media (max-width: 640px) { .view-all-align { text-align: left; } }
+</style>
+
 <section id="products" style="padding:6.5rem 2rem;background:#fff;">
   <div style="max-width:1100px;margin:0 auto;">
 
@@ -9,7 +14,7 @@
         <p class="eyebrow" style="color:var(--pink);margin-bottom:0.6rem;">{{ section.settings.eyebrow }}</p>
         <h2 class="display" style="font-size:clamp(2.6rem,5vw,3.8rem);color:var(--dark);">{{ section.settings.heading }}</h2>
       </div>
-      <div style="text-align:right;">
+      <div class="view-all-align">
         <a href="{{ section.settings.view_all_url | default: routes.root_url | append: 'collections/all' }}"
           style="font-weight:700;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--pink);border-bottom:2px solid var(--pink);padding-bottom:2px;transition:opacity 0.2s;text-decoration:none;"
           onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
