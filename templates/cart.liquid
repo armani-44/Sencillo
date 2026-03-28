@@ -105,7 +105,7 @@
           <!-- Subtotal rows -->
           <div style="display:flex;flex-direction:column;gap:0.75rem;padding-bottom:1.25rem;border-bottom:1px solid rgba(0,0,0,0.07);margin-bottom:1.25rem;">
             <div style="display:flex;justify-content:space-between;">
-              <span style="font-size:0.88rem;color:#666;">Subtotal ({{ cart.item_count }} item{{ cart.item_count | plural: '', 's' }})</span>
+              <span style="font-size:0.88rem;color:#666;">Subtotal ({{ cart.item_count }} {{ cart.item_count | pluralize: 'item', 'items' }})</span>
               <span style="font-weight:700;font-size:0.88rem;color:var(--dark);">{{ cart.total_price | money }}</span>
             </div>
             <div style="display:flex;justify-content:space-between;">
@@ -124,7 +124,7 @@
           <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.75rem;">
             <span style="font-weight:800;font-size:1rem;color:var(--dark);">Total</span>
             <div style="text-align:right;">
-              <span id="cart-total-original" style="font-size:0.78rem;color:#bbb;text-decoration:line-through;display:none;margin-bottom:2px;display:block;">{{ cart.total_price | money }}</span>
+              <span id="cart-total-original" style="font-size:0.78rem;color:#bbb;text-decoration:line-through;display:none;margin-bottom:2px;">{{ cart.total_price | money }}</span>
               <span id="cart-total-display" data-cents="{{ cart.total_price }}" style="font-weight:900;font-size:1.4rem;color:var(--dark);letter-spacing:-0.02em;">{{ cart.total_price | money }}</span>
             </div>
           </div>

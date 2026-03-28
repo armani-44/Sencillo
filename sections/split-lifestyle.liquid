@@ -20,7 +20,7 @@
     <div class="reveal" style="position:relative;z-index:1;">
       <p class="eyebrow" style="color:rgba(255,255,255,0.6);margin-bottom:1.3rem;">{{ section.settings.eyebrow }}</p>
       <h2 class="display" style="font-size:clamp(3rem,5.5vw,4.6rem);color:#fff;margin-bottom:1.75rem;text-shadow:0 4px 24px rgba(0,0,0,0.12);">
-        {{ section.settings.heading }}
+        {{ section.settings.heading | newline_to_br }}
       </h2>
       <div style="width:44px;height:3px;background:rgba(255,255,255,0.4);margin-bottom:1.75rem;border-radius:2px;"></div>
       <p style="font-weight:400;font-size:0.95rem;line-height:1.75;color:rgba(255,255,255,0.8);max-width:320px;margin-bottom:2.25rem;">
