@@ -82,6 +82,29 @@
           "cta_eyebrow": "Ready?",
           "cta_heading": "Taste The\nDifference."
         }
+      },
+      "join": {
+        "type": "join",
+        "settings": {
+          "eyebrow": "Be First Inline",
+          "heading": "Be\nFirst\nIn Line",
+          "subheading": "New drops, exclusive deals, and tequila news — straight to your inbox. No spam, ever.",
+          "perk_1_title": "Early Access",
+          "perk_1_body": "Be the first to know about new flavours and limited drops before anyone else.",
+          "perk_2_title": "Exclusive Offers",
+          "perk_2_body": "Members-only discounts and bundles that never go public.",
+          "perk_3_title": "Behind The Scenes",
+          "perk_3_body": "Stories from the agave fields, distillery visits, and cocktail recipes delivered monthly.",
+          "form_eyebrow": "Never Miss A Drop",
+          "form_heading": "Subscribe\nToday",
+          "form_body": "Join thousands of tequila lovers who already get the inside scoop on everything Sencillo.",
+          "placeholder": "Enter your email address",
+          "btn_label": "Join Now",
+          "disclaimer": "No spam, ever. Unsubscribe anytime. Your data is safe with us.",
+          "success_message": "Welcome to La Familia! Keep an eye on your inbox for your first exclusive update.",
+          "quote": "Life's too short for complicated cocktails — Sencillo keeps it bold, keeps it simple.",
+          "quote_attr": "— The Sencillo Team"
+        }
       }
     },
     "content_for_index": [],
