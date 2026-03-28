@@ -105,6 +105,21 @@
           "quote": "Life's too short for complicated cocktails — Sencillo keeps it bold, keeps it simple.",
           "quote_attr": "— The Sencillo Team —"
         }
+      },
+      "contact": {
+        "type": "contact",
+        "settings": {
+          "eyebrow": "We'd Love To Hear From You",
+          "heading": "Say Hola",
+          "subheading": "Whether you have a question about our products, a stockist enquiry, or just want to chat — we're all ears.",
+          "details_heading": "Let's\nTalk",
+          "details_body": "We're a small but passionate team. Drop us a message and we'll get back to you within 1–2 business days.",
+          "phone": "+44 (0) 20 1234 5678",
+          "email": "hola@sencillo.co.uk",
+          "location": "London, United Kingdom",
+          "btn_label": "Send Message",
+          "success_message": "Thanks for reaching out! We'll get back to you within 1–2 business days."
+        }
       }
     },
     "content_for_index": [],
