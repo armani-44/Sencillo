@@ -34,6 +34,7 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "logo": "shopify://shop_images/Sencillo-Sun-White.png",
           "tiktok_url": "",
           "instagram_url": "",
           "snapchat_url": "",
