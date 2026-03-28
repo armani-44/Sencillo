@@ -39,6 +39,45 @@
           "snapchat_url": "",
           "facebook_url": ""
         }
+      },
+      "email-popup": {
+        "type": "email-popup",
+        "settings": {
+          "discount_code": "FAMILIA10",
+          "delay_seconds": 4
+        }
+      },
+      "about": {
+        "type": "about",
+        "settings": {
+          "hero_image": "shopify://shop_images/summertime-can-1_efd20ad4-fcd3-4f25-8b45-3c070457ab1e.jpg",
+          "hero_eyebrow": "Our Story",
+          "hero_heading": "Simple By\nDesign.",
+          "hero_body": "Sencillo was born from a simple idea: the best cocktail you ever tasted shouldn't require a bartender, a shaker, or a ten-step recipe. Just great ingredients and great moments.",
+          "origin_eyebrow": "Where It Began",
+          "origin_heading": "Jalisco\nMeets\nLondon",
+          "origin_body": "<p>Sencillo was born on a rooftop in Mexico City, over a round of tequila so good it felt like cheating. Two friends asked themselves: why isn't this in a can? Why is premium tequila locked behind a bar?</p><p>Two years later, back in London with a mission and a distillery partner in the highlands of Jalisco, Sencillo launched. The name means <em>simple</em> in Spanish — and that's exactly what it is.</p><p>Simple ingredients. Simple format. Unapologetically bold flavour. That's Sencillo.</p>",
+          "values_eyebrow": "What We Stand For",
+          "values_heading": "No Fuss.\nNo Compromise.",
+          "value_1_emoji": "🌵",
+          "value_1_title": "100% Blue Agave",
+          "value_1_body": "We use only the finest 100% blue agave tequila from Jalisco's volcanic highlands. No blended spirit. No shortcuts. Ever.",
+          "value_2_emoji": "🍋",
+          "value_2_title": "Real Ingredients",
+          "value_2_body": "Strawberries. Rhubarb. Pineapple. Ginger. Real fruit. Real flavour. Nothing artificial, nothing that doesn't belong.",
+          "value_3_emoji": "♻️",
+          "value_3_title": "Sustainable",
+          "value_3_body": "Our cans are 100% recyclable. Our packaging is minimal by design. We believe luxury and responsibility belong together.",
+          "craft_eyebrow": "From Jalisco, With Love",
+          "craft_heading": "Actively\nAwesome\nAgave",
+          "craft_body": "<p>The agave plants we use take 7–10 years to mature in the mineral-rich volcanic soil of the Jalisco highlands. The piñas are slow-roasted in traditional brick ovens.</p><p>Double distilled in copper pot stills. Then blended with our carefully sourced fruit ingredients and canned at the peak of flavour. That's how Sencillo is made — the right way.</p>",
+          "founders_eyebrow": "The People Behind It",
+          "founders_heading": "Built By\nBelievers",
+          "founders_body": "Sencillo was founded by two friends who believe that what you drink says something about who you are. Not your status — your taste. Your sense of adventure. Your refusal to settle for average.",
+          "founders_quote": "We wanted to make the world's best canned tequila cocktail. We think we did. You tell us.",
+          "cta_eyebrow": "Ready?",
+          "cta_heading": "Taste The\nDifference."
+        }
       }
     },
     "content_for_index": []
