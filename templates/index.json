@@ -13,7 +13,7 @@
       "type": "hero",
       "settings": {
         "image": "shopify://shop_images/summertime-can-1.jpg",
-        "eyebrow": "Sencillo Tequila",
+        "eyebrow": "Sencillo Drinks",
         "heading": "Bold Taste.\nSimple\nPleasure.",
         "body": "Premium 100% blue agave tequila, perfectly premixed and ready to enjoy. Bold flavour, zero effort — Sencillo.",
         "primary_btn_label": "Shop Now",
@@ -85,7 +85,7 @@
       "type": "newsletter",
       "settings": {
         "heading": "Join La Familia!",
-        "body": "Sign up to our newsletter and be the first to know about new flavors, exclusive drops, and events near you.",
+        "body": "Sign up to our newsletter and be the first to know about new flavours, exclusive drops, and events near you.",
         "placeholder": "Enter your email address",
         "btn_label": "Subscribe",
         "disclaimer": "No spam, ever. Unsubscribe anytime."

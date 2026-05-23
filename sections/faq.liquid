@@ -1,0 +1,180 @@
+<style>
+  /* FAQ page-specific styles not covered by base.css */
+  details.faq-item { padding: 0; transition: background 0.2s; }
+  details.faq-item[open] { background: rgba(225,0,114,0.025); }
+  details.faq-item summary { padding: 1.15rem 0.25rem 1.15rem 0; position: relative; }
+  details.faq-item summary .faq-q-text { flex: 1; }
+  details.faq-item .faq-answer { padding: 0 2.5rem 1.5rem 0.25rem; line-height: 1.72; }
+  details.faq-item .faq-answer p + p { margin-top: 0.85rem; }
+  details.faq-item .faq-answer a { color: var(--pink); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--pink); }
+  details.faq-item .faq-answer strong { color: var(--dark); font-weight: 700; }
+
+  .faq-aside { background: var(--cream); border-radius: 18px; padding: 2.25rem 2rem; border: 1px solid rgba(0,0,0,0.04); position: sticky; top: 90px; }
+  .faq-aside-block + .faq-aside-block { margin-top: 1.75rem; padding-top: 1.75rem; border-top: 1px solid rgba(0,0,0,0.08); }
+
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr !important; } .faq-aside { position: static !important; } }
+</style>
+
+<!-- ══ HERO ══ -->
+<section id="main" tabindex="-1" style="position:relative;padding:6rem 2rem 4.5rem;background:linear-gradient(155deg,var(--deep) 0%,#6d0339 60%,var(--pink) 100%);color:#fff;text-align:center;overflow:hidden;">
+  <div style="position:absolute;top:-100px;right:-100px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,var(--yellow) 0%,var(--orange) 60%,transparent 75%);opacity:0.25;filter:blur(8px);pointer-events:none;"></div>
+  <div style="position:relative;max-width:780px;margin:0 auto;">
+    <p class="eyebrow" style="color:var(--yellow);margin-bottom:1.2rem;">Help Centre</p>
+    <h1 class="display" style="font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:1.25rem;">Questions?<br>We've Got Answers.</h1>
+    <p style="font-size:1.1rem;line-height:1.7;color:rgba(255,255,255,0.88);max-width:540px;margin:0 auto;">Everything you need to know about Sencillo. If you can't find what you're looking for, drop us a line at <a href="mailto:hola@sencillodrinks.com" style="color:var(--yellow);text-decoration:none;font-weight:700;border-bottom:1.5px solid var(--yellow);">hola@sencillodrinks.com</a>.</p>
+  </div>
+</section>
+
+<!-- ══ FAQ CONTENT ══ -->
+<section style="padding:5rem 2rem 6rem;background:#fff;">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start;" class="contact-grid">
+
+    <div>
+      <p class="eyebrow" style="color:var(--pink);margin-bottom:1rem;">Frequently Asked</p>
+      <h2 class="display" style="font-size:clamp(2rem,4vw,3.25rem);margin-bottom:2.5rem;">The Good<br>Stuff.</h2>
+
+      <!-- About Sencillo -->
+      <div class="faq-category">
+        <h3 class="faq-category-title">About Sencillo</h3>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">What is Sencillo, exactly?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Sencillo is premium premixed tequila in a can — proper agave spirit, real ingredients, no nonsense. We blend 100% blue weber agave tequila with natural fruit and botanicals so you can pour a perfect serve without the bar kit. Two flavours to start: <strong>La Coqueta</strong> (paloma-style, grapefruit and honey) and <strong>El Adelanto</strong> (margarita-style, lime and agave).</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">Where is Sencillo made?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Our tequila is distilled in Jalisco, Mexico — the home of the agave plant and the only place in the world tequila can legally be made. We then ship it to the UK where it's blended and canned to our exact spec. Mexican spirit, British finish.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <!-- Delivery & Returns -->
+      <div class="faq-category">
+        <h3 class="faq-category-title">Delivery &amp; Returns</h3>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">How long does delivery take?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>UK mainland orders typically arrive within <strong>2–5 working days</strong>. We'll send you a tracking link as soon as your order ships. Orders placed before 2pm Monday–Thursday usually go out the same day.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">Where do you deliver?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>We deliver across the UK mainland. Scottish Highlands, Northern Ireland, the Channel Islands and a handful of remote postcodes may attract a small surcharge or longer transit time — you'll see this at checkout. We don't currently ship internationally, but it's on the list.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">What's your returns policy?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>We don't offer free change-of-mind returns — once your order is on its way, we ask that you commit to it. If your cans arrive damaged, faulty or incorrect, email <a href="mailto:hola@sencillodrinks.com">hola@sencillodrinks.com</a> within 48 hours of delivery and we'll put it right. UK customers retain the statutory 14-day right to cancel an unopened order under the Consumer Contracts Regulations 2013 — see our <a href="{{ pages['terms'].url }}">Terms of Service</a> for the detail.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">My order arrived damaged or is missing items — help!</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>So sorry about that. Please email <a href="mailto:hola@sencillodrinks.com">hola@sencillodrinks.com</a> within <strong>48 hours</strong> of delivery with your order number and a photo of the damage, and we'll sort a replacement or refund right away.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Product & Ingredients -->
+      <div class="faq-category">
+        <h3 class="faq-category-title">Product &amp; Ingredients</h3>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">What's the ABV?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Both serves come in at <strong>5% ABV</strong> in a 250ml can — roughly the strength of a strong beer, but a properly grown-up flavour. One unit of alcohol per can.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">How many calories per can?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Around <strong>115 kcal per 250ml can</strong>, give or take a few depending on flavour. Full nutritional info lives on each product page.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">How should I serve it?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Ice cold, straight from the can — or poured over a tall glass full of ice with a wedge of lime or grapefruit. That's it. No shaker, no syrups, no excuses.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Account & Orders -->
+      <div class="faq-category">
+        <h3 class="faq-category-title">Account &amp; Orders</h3>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">Do I need to verify my age?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Yes — you must be <strong>18 or over</strong> to buy from us in the UK. You'll see a quick age-gate when you land on the site, and our courier may also require an adult signature on delivery. We may refuse or cancel any order if we have reason to believe the buyer is underage.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">Do you offer a subscription?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>Not yet — but it's coming. <a href="{{ routes.root_url }}#newsletter">Join La Familia</a> to be first to hear when subscriptions launch, including a launch-week discount.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Trade/Wholesale -->
+      <div class="faq-category">
+        <h3 class="faq-category-title">Trade &amp; Wholesale</h3>
+
+        <details class="faq-item">
+          <summary><span class="faq-q-text">I run a bar / shop / event — can I stock Sencillo?</span><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-answer">
+            <p>We'd love that. Drop a note to <a href="mailto:trade@sencillodrinks.com">trade@sencillodrinks.com</a> with a quick intro to your venue or shop and someone from the team will get back to you within two working days with our trade deck and pricing.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+
+    <!-- Aside -->
+    <aside class="faq-aside">
+      <div class="faq-aside-block">
+        <p class="eyebrow" style="color:var(--pink);margin-bottom:0.75rem;">Still Stuck?</p>
+        <h3 style="font-weight:900;font-size:1.5rem;letter-spacing:-0.015em;margin-bottom:0.75rem;">Talk to a human.</h3>
+        <p style="font-size:0.95rem;line-height:1.65;color:#555;margin-bottom:1.25rem;">We aim to reply within two working days. No bots, no holding music — just one of us, on email.</p>
+        <a href="{{ pages['contact'].url }}" class="btn-submit" style="display:inline-block;text-decoration:none;">Contact Us</a>
+      </div>
+      <div class="faq-aside-block">
+        <p class="eyebrow" style="color:var(--pink);margin-bottom:0.75rem;">Quick Links</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.6rem;">
+          <li><a href="{{ routes.all_products_collection_url }}" style="color:var(--dark);font-weight:600;font-size:0.95rem;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.color='var(--pink)';this.style.borderColor='var(--pink)';" onmouseout="this.style.color='var(--dark)';this.style.borderColor='transparent';">Shop the range →</a></li>
+          <li><a href="{{ pages['our-story'].url }}" style="color:var(--dark);font-weight:600;font-size:0.95rem;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.color='var(--pink)';this.style.borderColor='var(--pink)';" onmouseout="this.style.color='var(--dark)';this.style.borderColor='transparent';">Our story →</a></li>
+          <li><a href="{{ pages['terms'].url }}" style="color:var(--dark);font-weight:600;font-size:0.95rem;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.color='var(--pink)';this.style.borderColor='var(--pink)';" onmouseout="this.style.color='var(--dark)';this.style.borderColor='transparent';">Terms of service →</a></li>
+          <li><a href="{{ pages['privacy'].url }}" style="color:var(--dark);font-weight:600;font-size:0.95rem;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.color='var(--pink)';this.style.borderColor='var(--pink)';" onmouseout="this.style.color='var(--dark)';this.style.borderColor='transparent';">Privacy policy →</a></li>
+        </ul>
+      </div>
+      <div class="faq-aside-block">
+        <p class="eyebrow" style="color:var(--pink);margin-bottom:0.75rem;">Trade Enquiries</p>
+        <p style="font-size:0.95rem;line-height:1.65;color:#555;margin-bottom:0.6rem;">Bars, restaurants, retailers and event partners — we'd love to hear from you.</p>
+        <a href="mailto:trade@sencillodrinks.com" style="color:var(--pink);text-decoration:none;font-weight:700;font-size:0.95rem;border-bottom:1.5px solid var(--pink);">trade@sencillodrinks.com</a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Content",
+  "settings": []
+}
+{% endschema %}

@@ -13,7 +13,75 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: 'Jost', sans-serif; background: #fff; color: var(--dark); overflow-x: hidden; }
+body { font-family: 'Jost', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; background: #fff; color: var(--dark); overflow-x: hidden; }
+
+/* ─── Skip to content (a11y) ─── */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--dark);
+  color: #fff;
+  padding: 0.85rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.18s ease;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+/* ─── Reduced motion preference ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Legal document layout (privacy / terms / cookies pages) ─── */
+.legal-doc { max-width: 780px; margin: 0 auto; padding: 4rem 1.5rem 5rem; font-size: 1rem; line-height: 1.7; color: #3a3a3a; }
+.legal-doc h1 { font-weight: 900; font-size: clamp(2.4rem, 5vw, 3.5rem); letter-spacing: -0.025em; line-height: 0.95; text-transform: uppercase; color: var(--deep); margin-bottom: 0.75rem; }
+.legal-doc .legal-meta { font-weight: 700; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 2.5rem; }
+.legal-doc h2 { font-weight: 900; font-size: 1.35rem; letter-spacing: -0.01em; text-transform: uppercase; color: var(--deep); margin-top: 3rem; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 2px solid rgba(225,0,114,0.18); }
+.legal-doc h2:first-of-type { margin-top: 0; }
+.legal-doc h3 { font-weight: 700; font-size: 1rem; color: var(--dark); margin-top: 1.5rem; margin-bottom: 0.6rem; }
+.legal-doc p { margin-bottom: 1rem; }
+.legal-doc ul, .legal-doc ol { margin: 0 0 1.25rem 1.5rem; }
+.legal-doc li { margin-bottom: 0.5rem; }
+.legal-doc li::marker { color: var(--pink); }
+.legal-doc a { color: var(--pink); font-weight: 600; text-decoration: none; border-bottom: 1.5px solid var(--pink); }
+.legal-doc strong { color: var(--dark); font-weight: 700; }
+.legal-toc { background: var(--cream); border-radius: 14px; padding: 1.5rem 1.75rem; margin-bottom: 3.5rem; border: 1px solid rgba(0,0,0,0.04); }
+.legal-toc p { font-weight: 700; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.85rem; }
+.legal-toc ol { columns: 2; column-gap: 2rem; margin: 0 0 0 1.25rem; padding: 0; }
+.legal-toc ol li { font-size: 0.92rem; line-height: 1.6; margin-bottom: 0.35rem; break-inside: avoid; }
+.legal-toc ol li a { color: var(--dark); border-bottom: none; font-weight: 500; }
+.legal-toc ol li a:hover { color: var(--pink); border-bottom: 1.5px solid var(--pink); }
+.legal-todo { background: rgba(255,188,0,0.25); padding: 0 0.35em; border-radius: 3px; }
+@media (max-width: 640px) { .legal-toc ol { columns: 1; } }
+
+/* ─── FAQ accordion ─── */
+.faq-wrap { max-width: 780px; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
+.faq-category { margin-bottom: 2.75rem; }
+.faq-category-title { font-weight: 900; font-size: 1.25rem; letter-spacing: -0.01em; text-transform: uppercase; color: var(--deep); margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 2px solid rgba(225,0,114,0.18); }
+details.faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+details.faq-item summary { list-style: none; cursor: pointer; padding: 1.15rem 0.25rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1.25rem; font-weight: 600; font-size: 1rem; color: var(--dark); line-height: 1.45; transition: color 0.2s; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary:hover { color: var(--pink); }
+details.faq-item summary .faq-chevron { flex-shrink: 0; width: 22px; height: 22px; margin-top: 2px; transition: transform 0.28s var(--ease-spring); color: var(--pink); }
+details.faq-item[open] summary { color: var(--pink); }
+details.faq-item[open] summary .faq-chevron { transform: rotate(180deg); }
+.faq-answer { padding: 0 0.25rem 1.4rem; color: #555; font-size: 0.95rem; line-height: 1.65; }
+.faq-answer a { color: var(--pink); font-weight: 600; }
 
 /* ─── Grain overlay ─── */
 .grainy::after {

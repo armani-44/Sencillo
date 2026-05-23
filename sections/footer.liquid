@@ -31,18 +31,18 @@
       <!-- Col 2: Nav links -->
       <div style="display:flex;flex-direction:column;gap:1.1rem;padding-top:0.5rem;">
         <a href="{{ routes.root_url }}" class="footer-nav-link">Home</a>
+        <a href="{{ routes.all_products_collection_url }}" class="footer-nav-link">Shop</a>
         <a href="{{ pages['our-story'].url }}" class="footer-nav-link">Our Story</a>
-        <a href="#craft" class="footer-nav-link">The Craft</a>
-        <a href="#newsletter" class="footer-nav-link">Join La Familia</a>
+        <a href="{{ pages['join-la-familia'].url }}" class="footer-nav-link">Join La Familia</a>
       </div>
 
       <!-- Col 3: More links -->
       <div style="display:flex;flex-direction:column;gap:1.1rem;padding-top:0.5rem;">
-        <a href="{{ pages['customer-reviews'].url | default: '#' }}" class="footer-nav-link">Customer Reviews</a>
-        <a href="{{ pages['contact'].url | default: routes.root_url | append: 'pages/contact' }}" class="footer-nav-link">Contact Us</a>
-        <a href="{{ routes.account_url }}" class="footer-nav-link">Manage My Subscription</a>
-        <a href="{{ pages['terms-of-service'].url | default: shop.terms_of_service_url }}" class="footer-nav-link">Terms of Service</a>
-        <a href="{{ pages['privacy-policy'].url | default: shop.privacy_policy_url }}" class="footer-nav-link">Privacy Policy</a>
+        <a href="{{ pages['contact'].url }}" class="footer-nav-link">Contact Us</a>
+        <a href="{{ pages['faq'].url }}" class="footer-nav-link">FAQ</a>
+        <a href="{{ pages['terms'].url | default: shop.terms_of_service_url }}" class="footer-nav-link">Terms of Service</a>
+        <a href="{{ pages['privacy'].url | default: shop.privacy_policy_url }}" class="footer-nav-link">Privacy Policy</a>
+        <a href="{{ pages['cookies'].url }}" class="footer-nav-link">Cookies</a>
       </div>
 
       <!-- Col 4: Newsletter signup -->
