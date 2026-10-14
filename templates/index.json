@@ -74,8 +74,8 @@
       "type": "split-craft",
       "settings": {
         "eyebrow": "The Craft",
-        "heading": "Because the best moments are shared.",
-        "body": "Sourced from the volcanic highlands of Jalisco. Slow-roasted in traditional brick ovens. 100% blue agave — no shortcuts, no compromises, ever.",
+        "heading": "Because\n the best moments are shared.",
+        "body": "",
         "btn_label": "Learn More",
         "btn_url": "shopify://pages/our-story",
         "image": "shopify://shop_images/friends-product-shot.jpg"
