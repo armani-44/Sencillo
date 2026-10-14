@@ -26,18 +26,6 @@
       "type": "marquee-ticker",
       "settings": {}
     },
-    "stats": {
-      "type": "stats-banner",
-      "settings": {
-        "heading": "A Can For Every Occasion!",
-        "stat_1_number": 0,
-        "stat_1_label": "",
-        "stat_2_number": 0,
-        "stat_2_label": "",
-        "stat_3_number": 0,
-        "stat_3_label": ""
-      }
-    },
     "stats_banner_Y7xWGF": {
       "type": "stats-banner",
       "settings": {
@@ -107,7 +95,6 @@
   "order": [
     "hero",
     "marquee",
-    "stats",
     "stats_banner_Y7xWGF",
     "featured-products",
     "split-lifestyle",
