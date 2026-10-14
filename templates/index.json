@@ -24,6 +24,7 @@
     },
     "marquee": {
       "type": "marquee-ticker",
+      "disabled": true,
       "settings": {}
     },
     "stats_banner_Y7xWGF": {
