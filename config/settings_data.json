@@ -44,7 +44,7 @@
       "email-popup": {
         "type": "email-popup",
         "settings": {
-          "discount_code": "FAMILIA10",
+          "discount_code": "",
           "delay_seconds": 4
         }
       },

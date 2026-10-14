@@ -87,7 +87,7 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Join for the special moments.",
+        "heading": "Join us for the special moments.",
         "body": "Sign up to our newsletter and be the first to know about exclusive drops, events and parties near you.",
         "placeholder": "Enter your email address",
         "btn_label": "subscribe",
