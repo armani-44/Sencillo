@@ -19,10 +19,10 @@
         "settings": {
           "promo_1": "Free delivery on all orders over £40",
           "promo_2": "sign up to members list to receive the latest news, parties, events and more",
-          "tiktok_url": "",
-          "instagram_url": "",
-          "snapchat_url": "",
-          "facebook_url": ""
+          "tiktok_url": "https://www.tiktok.com/@sencillodrinks",
+          "instagram_url": "https://instagram.com/sencillodrinks",
+          "snapchat_url": "https://instagram.com/sencillodrinks",
+          "facebook_url": "https://instagram.com/sencillodrinks"
         }
       },
       "header": {
