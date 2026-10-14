@@ -35,10 +35,10 @@
         "type": "footer",
         "settings": {
           "logo": "shopify://shop_images/Sencillo-Sun-White.png",
-          "tiktok_url": "",
+          "tiktok_url": "https://www.tiktok.com/@sencillodrinks",
           "instagram_url": "https://www.instagram.com/sencillodrinks",
-          "snapchat_url": "",
-          "facebook_url": ""
+          "snapchat_url": "https://www.instagram.com/sencillodrinks",
+          "facebook_url": "https://www.instagram.com/sencillodrinks"
         }
       },
       "email-popup": {
@@ -85,10 +85,11 @@
       },
       "join": {
         "type": "join",
+        "name": "Join the family",
         "settings": {
           "eyebrow": "Be First Inline",
-          "heading": "Join La Familia",
-          "subheading": "New drops, exclusive deals, and tequila news — straight to your inbox. No spam, ever.",
+          "heading": "Join the community",
+          "subheading": "New drops, exclusive deals, and Sencillo news — straight to your inbox. No spam, ever.",
           "perk_1_title": "Early Access",
           "perk_1_body": "Be the first to know about new flavours and limited drops before anyone else.",
           "perk_2_title": "Exclusive Offers",
