@@ -85,7 +85,7 @@
       },
       "join": {
         "type": "join",
-        "name": "Join the family",
+        "name": "Join the community",
         "settings": {
           "eyebrow": "Be First Inline",
           "heading": "Join the community",
@@ -102,7 +102,7 @@
           "placeholder": "Enter your email address",
           "btn_label": "Join Now",
           "disclaimer": "No spam, ever. Unsubscribe anytime. Your data is safe with us.",
-          "success_message": "Welcome to La Familia! Keep an eye on your inbox for your first exclusive update.",
+          "success_message": "Welcome to the community! Keep an eye on your inbox for your first exclusive updates.",
           "quote": "Life's too short for complicated cocktails — Sencillo keeps it bold, keeps it simple.",
           "quote_attr": "— The Sencillo Team —"
         }
