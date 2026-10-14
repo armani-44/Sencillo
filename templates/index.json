@@ -87,10 +87,10 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Join La Familia!",
-        "body": "Sign up to our newsletter and be the first to know about new flavours, exclusive drops, and events near you.",
+        "heading": "Join the movement",
+        "body": "Sign up to our newsletter and be the first to know about exclusive drops, events and parties near you.",
         "placeholder": "Enter your email address",
-        "btn_label": "Subscribe",
+        "btn_label": "subscribe",
         "disclaimer": "No spam, ever. Unsubscribe anytime."
       }
     }
