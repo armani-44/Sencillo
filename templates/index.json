@@ -45,7 +45,7 @@
       "name": "Banner Image",
       "settings": {
         "image": "shopify://shop_images/summertime-can-2.jpg",
-        "height": 250
+        "height": 200
       }
     },
     "featured-products": {
@@ -74,7 +74,7 @@
       "type": "split-craft",
       "settings": {
         "eyebrow": "The Craft",
-        "heading": "Actively\nAwesome\nAgave",
+        "heading": "cocktails for those shared moments",
         "body": "Sourced from the volcanic highlands of Jalisco. Slow-roasted in traditional brick ovens. 100% blue agave — no shortcuts, no compromises, ever.",
         "btn_label": "Learn More",
         "btn_url": "shopify://pages/our-story",
