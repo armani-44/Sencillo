@@ -29,6 +29,7 @@
     },
     "stats_banner_Y7xWGF": {
       "type": "stats-banner",
+      "disabled": true,
       "settings": {
         "heading": "A Can For Every Occasion!",
         "stat_1_number": 0,
@@ -37,6 +38,14 @@
         "stat_2_label": "",
         "stat_3_number": 0,
         "stat_3_label": ""
+      }
+    },
+    "banner_image_etcLhH": {
+      "type": "banner-image",
+      "name": "Banner Image",
+      "settings": {
+        "image": "shopify://shop_images/summertime-can-2.jpg",
+        "height": 250
       }
     },
     "featured-products": {
@@ -97,6 +106,7 @@
     "hero",
     "marquee",
     "stats_banner_Y7xWGF",
+    "banner_image_etcLhH",
     "featured-products",
     "split-lifestyle",
     "split-craft",
