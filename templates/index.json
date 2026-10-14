@@ -74,7 +74,7 @@
       "type": "split-craft",
       "settings": {
         "eyebrow": "The Craft",
-        "heading": "Because\n the best moments are shared.",
+        "heading": "Because\n the best moments \nare shared.",
         "body": "",
         "btn_label": "Learn More",
         "btn_url": "shopify://pages/our-story",
